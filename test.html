@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>тест на определение IQ</title>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/test-page.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <nav>
+            <button aria-label="Open Menu" onclick="toggleMenu()" class="open-menu-btn borderless">
+                <img src="images/svg/burger.svg" alt="">
+            </button>
+            <div id="menu" class="close">
+                <button aria-label="Close Menu" onclick="toggleMenu()" class="close-menu-btn borderless">
+                    <img src="images/svg/close.svg" alt="">
+                </button>
+                <ul>
+                    <li>
+                        <a href="index.html">Главная</a>
+                    </li>
+                    <li>
+                        <a href="#">Информация о тесте</a>
+                    </li>
+                    <li>
+                        <a href="test.html">пройти тест</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <form id="questions-section">
+            <div class="progress-bar">
+                <div class="progress-line"></div>
+            </div>
+
+            <div class="questions-wrapper">
+                <p id="question-title">Question</p>
+
+                <div class="questions__content" data-question-type="number" id="content">
+                    <div class="options">
+                        <!-- Questions -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="processing d-none">
+                <h1>Oбработка результатов</h1>
+                <img src="images/svg/loading.svg" class="loading" alt="loading">
+                <p>Определение стиля мышления..........<br>..... ...................................................</p>
+            </div>
+
+            <button type="submit" id="submit-btn" class="btn" disabled>далее</button>
+        </form>
+
+        <div class="call-section d-none">
+            <h2 class="heading-1">Ваш результат рассчитан: </h2>
+            <p class="p-1">
+                <u>Вы относитесь к 3%</u> респондентов, чей уровень интеллекта более чем на
+                15 пунктов отличается от среднего в большую или меньшую сторону!
+            </p>
+            <h2 class="text-green heading-2">Скорее получите свой результат!</h2>
+            <p class="card">
+                В целях защиты персональных
+                данных результат теста, их подробная интерпретация и рекомендации доступны в виде голосового сообщения
+                по
+                звонку с вашего мобильного телефона
+            </p>
+            <p class="call-p text-green">Звоните скорее, запись доступна всего <br> <big>10:00</big> минут</p>
+
+            <button class="btn-red" id="call-btn">
+                <img src="images/svg/phone.svg" alt="phone ringing">
+                <span>Позвонить и прослушать результат</span>
+            </button>
+
+            <div id="outputContainer" class="d-none">
+                <p><b>Name:</b> <span id="name"></span></p>
+                <p><b>Height:</b> <span id="height"></span></p>
+                <p><b>Gender:</b> <span id="gender"></span></p>
+                <p><b>Hair color:</b> <span id="hair-color"></span></p>
+                <p><b>Eye Color:</b> <span id="eye-color"></span></p>
+            </div>
+
+            <p class="footer-text">
+                TERMENI SI CONDITII: ACESTA ESTE UN SERVICIU DE DIVERTISMENT. PRIN FOLOSIREA LUI DECLARATI CA AVETI 18
+                ANI IMPLINITI,
+            </p>
+
+            <img src="images/background/lightning_1.png" class="lightning-1" alt="lightning">
+            <img src="images/background/lightning_2.png" class="lightning-2" alt="lightning">
+        </div>
+    </div>
+
+    <template id="question-item">
+        <label>
+            <input type="radio" value="male" name="type">
+            <span id="value"></span>
+        </label>
+    </template>
+    <script src="js/main.js"></script>
+    <script src="js/quiz.js"></script>
+</body>
+
+</html>
